@@ -1,0 +1,24 @@
+{
+  "name": "pos-backend",
+  "version": "1.0.0",
+  "description": "Lanka Fresh POS — Fastify + Prisma + PostgreSQL Backend",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:migrate": "npx prisma migrate dev",
+    "db:seed": "node prisma/seed.js",
+    "db:studio": "npx prisma studio",
+    "db:generate": "npx prisma generate"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^5.11.0",
+    "fastify": "^4.26.2",
+    "fastify-plugin": "^4.5.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.11.0"
+  }
+}

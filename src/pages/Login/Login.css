@@ -1,0 +1,239 @@
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-alt);
+    padding: 20px;
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.brand-text h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.brand-text p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.lang-toggle {
+    background: white;
+    border-radius: 10px;
+    padding: 4px;
+    display: flex;
+    box-shadow: var(--shadow-sm);
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.login-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 440px;
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.cashier-img {
+    width: 80px;
+    height: 80px;
+    background: #E8F5E9;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cashier-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.pin-display {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.pin-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #E5E7EB;
+}
+
+.pin-dot.filled {
+    background: var(--primary-color);
+}
+
+.pin-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.key-btn {
+    height: 60px;
+    background: var(--secondary-color);
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.key-btn:active {
+    background: #E9ECEF;
+    transform: scale(0.98);
+}
+
+.key-btn.clear {
+    color: #DC2626;
+    font-size: 0.8rem;
+    flex-direction: column;
+}
+
+.key-btn.back {
+    background: #F1F5F9;
+}
+
+.start-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(0, 230, 64, 0.4);
+    transition: all 0.2s;
+}
+
+.start-btn:hover {
+    background: var(--primary-hover);
+}
+
+.start-btn p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.card-footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.status-online {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot-green {
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+.page-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-stats {
+    display: flex;
+    gap: 25px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    color: #A1A1AA;
+}

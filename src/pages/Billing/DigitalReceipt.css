@@ -1,0 +1,354 @@
+/* ----- Digital Receipt CSS ----- */
+.receipt-page {
+    min-height: 100%;
+    background: #F1F5F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px 80px;
+}
+
+.receipt-container {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 32px;
+    max-width: 960px;
+    width: 100%;
+    align-items: start;
+}
+
+/* ---- Left: Paper Receipt ---- */
+.receipt-paper {
+    background: white;
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    font-family: 'Courier New', monospace;
+    font-size: 0.88rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.receipt-logo { display: flex; justify-content: center; margin-bottom: 12px; }
+
+.logo-icon-sm {
+    width: 44px; height: 44px;
+    background: #00E640;
+    color: #064E3B;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.receipt-store-name {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    margin-bottom: 4px;
+}
+
+.receipt-store-addr {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.receipt-vat {
+    text-align: center;
+    font-size: 0.72rem;
+    color: #94A3B8;
+    margin-top: 4px;
+}
+
+.receipt-divider-dotted {
+    border: none;
+    border-top: 1.5px dashed #CBD5E1;
+    margin: 14px 0;
+}
+
+.receipt-bill-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 0;
+    font-size: 0.8rem;
+}
+
+.meta-label { color: #64748B; }
+.meta-value { color: #0F172A; margin-left: 6px; }
+.meta-value.bold { font-weight: 700; }
+
+.receipt-items-header {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 0 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748B;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.receipt-items-header span:not(:first-child) { text-align: right; }
+
+.receipt-item-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 4px 10px;
+    padding: 5px 0;
+    font-size: 0.82rem;
+    border-bottom: 1px solid #F8FAFC;
+}
+
+.ri-name { font-weight: 600; word-break: break-word; }
+.ri-qty, .ri-price, .ri-total { text-align: right; white-space: nowrap; }
+
+.receipt-totals { font-size: 0.85rem; }
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    color: #475569;
+}
+
+.receipt-grand-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 900;
+    font-family: sans-serif;
+    color: #0F172A;
+    padding: 12px 0 8px;
+    border-top: 2px solid #0F172A;
+    margin-top: 6px;
+}
+
+/* PAID Stamp */
+.paid-stamp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(0, 180, 80, 0.18);
+    border: 5px solid rgba(0, 180, 80, 0.18);
+    padding: 6px 20px;
+    border-radius: 8px;
+    letter-spacing: 6px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.receipt-thank-you {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #475569;
+    position: relative;
+    z-index: 1;
+}
+
+.receipt-thank-you p:first-child { font-weight: 800; font-size: 0.9rem; font-family: sans-serif; }
+
+.si-text { font-size: 1rem; color: #059669; font-weight: 700; font-family: sans-serif; }
+
+.receipt-note { font-size: 0.7rem; color: #94A3B8; margin-top: 6px; font-style: italic; }
+
+/* ---- Right: Success Panel ---- */
+.receipt-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.success-header {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.success-header h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
+.success-header p { font-size: 0.85rem; color: #64748B; line-height: 1.5; }
+
+.share-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.share-btn {
+    background: white;
+    border: 2px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: #334155;
+}
+
+.share-btn:hover { border-color: #94A3B8; background: #F8FAFC; }
+
+.share-btn.active-share {
+    border-color: #00E640;
+    background: #ECFDF5;
+    color: #059669;
+}
+
+.share-label { font-size: 0.95rem; font-weight: 700; }
+.share-sub { font-size: 0.72rem; color: #94A3B8; text-align: center; }
+
+/* WhatsApp */
+.whatsapp-section {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.wa-label { font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; color: #334155; }
+
+.wa-input-row { display: flex; gap: 12px; }
+
+.wa-input-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #F8FAFC;
+}
+
+.wa-prefix {
+    padding: 12px 14px;
+    background: #F1F5F9;
+    font-weight: 700;
+    color: #475569;
+    font-size: 0.9rem;
+    border-right: 1px solid #E2E8F0;
+}
+
+.wa-input-wrap input {
+    flex: 1;
+    padding: 12px 14px;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.wa-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+}
+
+.wa-btn:hover { background: #128C7E; }
+
+/* CTA Buttons */
+.receipt-cta-row { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
+
+.cta-new-sale {
+    background: #00E640;
+    color: #064E3B;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 28px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.15s;
+    box-shadow: 0 4px 14px rgba(0, 230, 64, 0.4);
+}
+
+.cta-new-sale:hover { background: #00cc38; transform: translateY(-1px); }
+
+.cta-dashboard {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 20px;
+    background: white;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #475569;
+    white-space: nowrap;
+    transition: all 0.15s;
+}
+
+.cta-dashboard:hover { background: #F8FAFC; border-color: #94A3B8; }
+
+/* Info Chips */
+.receipt-chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.chip {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    border: 1px solid #E2E8F0;
+}
+
+.chip-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-bottom: 2px;
+}
+
+.chip-dot.green { background: #10B981; }
+.chip-dot.blue { background: #3B82F6; }
+
+.chip-label { font-size: 0.68rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px; }
+.chip-val { font-size: 0.88rem; font-weight: 700; color: #0F172A; }
+
+.receipt-footer {
+    font-size: 0.72rem;
+    color: #94A3B8;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* Print styles */
+@media print {
+    .receipt-right { display: none; }
+    .receipt-page { background: white; padding: 0; }
+    .receipt-paper { box-shadow: none; border: none; }
+}
